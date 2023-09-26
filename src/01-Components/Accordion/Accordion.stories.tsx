@@ -1,4 +1,4 @@
-import type { Meta } from '@storybook/react';
+import type {Meta} from '@storybook/react';
 
 import {Accordion} from './Accordion';
 import React, {useState} from "react";
@@ -8,6 +8,17 @@ const meta: Meta<typeof Accordion> = {
 };
 
 export default meta;
+
+// "new syntax"
+
+// type Story = StoryObj<typeof Accordion>;
+//
+// export const FirstStory: Story = {
+// 	args: {
+// 		title: "bla",
+// 		collapsed: true
+// 	},
+// };
 
 export const CollapsedAccordion =() => {
 	return <Accordion title={"Collapsed Accordion"}
