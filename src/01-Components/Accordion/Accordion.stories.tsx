@@ -26,12 +26,12 @@ export default {
 
 // "old syntax"
 
-const callbackHandler  = action("activate console")
+const callbackHandler  = action("FullAccordion was clicked")
 
 export const CollapsedAccordion =() => {
 	return <Accordion title={"Collapsed Accordion"}
 					  collapsed={true}
-					  callBack={()=>{callbackHandler()}}/>
+					  callBack={()=>{}}/>
 }
 export const OpenedAccordion =() => {
 	return <Accordion title={"Opened Accordion"}
@@ -43,5 +43,9 @@ export const FullAccordion =() => {
 	const [collapsed, setCollapsed] = useState(false)
 	return <Accordion title={"FullAccordion (click on me)"}
 					  collapsed={collapsed}
-					  callBack={()=>setCollapsed(!collapsed)}/>
+					  callBack={()=>{
+						  setCollapsed(!collapsed)
+						  callbackHandler()
+					  }
+					  }/>
 }
