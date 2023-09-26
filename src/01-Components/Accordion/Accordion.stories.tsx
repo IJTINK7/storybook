@@ -1,4 +1,5 @@
 import type {Meta} from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 import {Accordion} from './Accordion';
 import React, {useState} from "react";
@@ -16,14 +17,17 @@ export default meta;
 // export const FirstStory: Story = {
 // 	args: {
 // 		title: "bla",
-// 		collapsed: true
+// 		collapsed: true,
+// 		callBack: ()=>{callbackHandler()}
 // 	},
 // };
+
+const callbackHandler  = action("activate console")
 
 export const CollapsedAccordion =() => {
 	return <Accordion title={"Collapsed Accordion"}
 					  collapsed={true}
-					  callBack={() => {}}/>
+					  callBack={()=>{callbackHandler()}}/>
 }
 export const OpenedAccordion =() => {
 	return <Accordion title={"Opened Accordion"}
