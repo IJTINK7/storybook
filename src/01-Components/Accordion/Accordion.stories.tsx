@@ -1,14 +1,16 @@
-import type {Meta} from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import {Accordion} from './Accordion';
 import React, {useState} from "react";
 
-const meta: Meta<typeof Accordion> = {
+// const meta: Meta<typeof Accordion> = {
+// 	component: Accordion,
+// };
+
+export default {
 	component: Accordion,
 };
 
-export default meta;
 
 // "new syntax"
 
@@ -21,6 +23,8 @@ export default meta;
 // 		callBack: ()=>{callbackHandler()}
 // 	},
 // };
+
+// "old syntax"
 
 const callbackHandler  = action("activate console")
 
