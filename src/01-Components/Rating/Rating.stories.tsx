@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions';
 import {Rating, RatingValueType} from './Rating';
 import React, {useState} from "react";
 
@@ -5,12 +6,14 @@ export default {
 	component: Rating,
 };
 
+const callbackHandler = action("Clicked Star number: ")
+
 export const FullRating = () => {
 	let [controlledRatingValue, setControlledRatingValue] = useState<RatingValueType>(0);
 	return <Rating value={controlledRatingValue} callBack={setControlledRatingValue}/>
 }
 export const ZeroStarRating = () => {
-	return <Rating value={0} callBack={()=>{}}/>
+	return <Rating value={0} callBack={callbackHandler}/>
 }
 export const OneStarRating = () => {
 	return <Rating value={1} callBack={()=>{}}/>
