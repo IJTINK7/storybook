@@ -10,7 +10,10 @@ const callbackHandler = action("On,Off or Switch button was clicked")
 
 export const FullUncontrolledOnOff = () => {
 	const [activeOnOffElement, setActiveOnOffElement] = useState<boolean>(true)
-	return <ControlledOnOff active={activeOnOffElement} callBack={setActiveOnOffElement}/>
+	return <ControlledOnOff active={activeOnOffElement} callBack={()=>{
+		setActiveOnOffElement(!activeOnOffElement)
+		callbackHandler()
+	}}/>
 }
 export const OnModeUncontrolledOnOff = () => {
 	return <ControlledOnOff active={true} callBack={callbackHandler}/>
