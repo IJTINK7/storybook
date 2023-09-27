@@ -4,7 +4,6 @@ import {PageTitle} from "./Components/PageTitle";
 import {Accordion} from "./Components/Accordion/Accordion";
 import {UncontrolledAccordion} from "./Components/Accordion/UncontrolledAccordion";
 import {UncontrolledOnOff} from "./Components/OnOff/UncontrolledOnOff";
-import {UncontrolledRating} from "./Components/Rating/UncontrolledRating";
 
 function App() {
 	let [controlledRatingValue, setControlledRatingValue] = useState<RatingValueType>(1);
@@ -21,7 +20,9 @@ function App() {
 			<UncontrolledAccordion title={"This Accordion is uncontrolled by the user (click me)"}/>
 			<hr/>
 			<Rating value={controlledRatingValue} callBack={setControlledRatingValue}/>
-			<UncontrolledRating/>
+
+			{/*/!*<UncontrolledRating/>*!/  <--*/}
+
 			<hr/>
 			<hr/>
 			{/*<ControlledOnOff active={activeOnOffElement} callBack={() => setActiveOnOffElement(!activeOnOffElement)}/>*/}
