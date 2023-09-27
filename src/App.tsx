@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {Rating, RatingValueType} from "./01-Components/Rating/Rating";
-import {PageTitle} from "./01-Components/PageTitle";
-import {Accordion} from "./01-Components/Accordion/Accordion";
-import {UncontrolledAccordion} from "./01-Components/Accordion/UncontrolledAccordion";
-import {UncontrolledOnOff} from "./01-Components/06-OnOff/UncontrolledOnOff";
-import {UncontrolledRating} from "./01-Components/Rating/UncontrolledRating";
+import {Rating, RatingValueType} from "./Components/Rating/Rating";
+import {PageTitle} from "./Components/PageTitle";
+import {Accordion} from "./Components/Accordion/Accordion";
+import {UncontrolledAccordion} from "./Components/Accordion/UncontrolledAccordion";
+import {UncontrolledOnOff} from "./Components/OnOff/UncontrolledOnOff";
+import {UncontrolledRating} from "./Components/Rating/UncontrolledRating";
 
 function App() {
 	let [controlledRatingValue, setControlledRatingValue] = useState<RatingValueType>(1);
