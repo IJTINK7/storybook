@@ -8,9 +8,13 @@ export default {
 
 const callbackHandler = action("Clicked Star number: ")
 
+
 export const FullRating = () => {
 	let [controlledRatingValue, setControlledRatingValue] = useState<RatingValueType>(0);
-	return <Rating value={controlledRatingValue} callBack={setControlledRatingValue}/>
+	return <Rating value={controlledRatingValue} callBack={(ratingValue)=>{
+		callbackHandler(ratingValue)
+		setControlledRatingValue(ratingValue)
+	}}/>
 }
 export const ZeroStarRating = () => {
 	return <Rating value={0} callBack={callbackHandler}/>
