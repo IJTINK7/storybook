@@ -7,7 +7,7 @@ const AccordionBody = (props: AccordionBodyPropsType) => {
 	return (
 		<div>
 			<ul>
-				{props.items.map((el=> <li>{el}</li>))}
+				{props.items.map(((el,index)=> <li key={index}>{el}</li>))}
 			</ul>
 		</div>
 	);
