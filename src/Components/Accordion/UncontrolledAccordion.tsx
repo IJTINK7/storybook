@@ -4,6 +4,7 @@ import AccordionBody from "./AccordionBody";
 
 type PropsType = {
 	title: string
+	onCLick: (value: any)=> void
 }
 
 export const UncontrolledAccordion = (props: PropsType) => {
@@ -17,7 +18,7 @@ export const UncontrolledAccordion = (props: PropsType) => {
 				<AccordionTitle title={props.title} callBack={clickAccordionTitleHandler}/>
 			</div>
 			{/*{props.collapsed ? <AccordionBody/> : <></>}*/} {/*not good*/}
-			{collapsed && <AccordionBody items={["Viktor","Igor"]}/>} {/*best practice*/}
+			{collapsed && <AccordionBody items={[{title: "Igor", value: 1},{title: "Victor", value: 2}]} onCLick={props.onCLick}/>} {/*best practice*/}
 		</div>
 	)
 };

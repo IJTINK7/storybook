@@ -29,12 +29,14 @@ export default {
 // Kabzda 14
 
 const callbackHandler  = action("FullAccordion was clicked")
+const onClickHandler  = action("Some item was clicked")
 
 export const CollapsedAccordion =() => {
 	return <Accordion title={"Collapsed Accordion"}
 					  collapsed={true}
 					  callBack={()=>{}}
 					  items={[]}
+					  onCLick={onClickHandler}
 
 	/>
 }
@@ -42,7 +44,8 @@ export const OpenedAccordion =() => {
 	return <Accordion title={"Opened Accordion"}
 					  collapsed={false}
 					  callBack={() => {}}
-					  items={["Roma","Anna","Igor"]}
+					  items={[{title: "Roma", value: 1},{title: "Anna", value: 2},{title: "Igor", value: 3}]}
+					  onCLick={onClickHandler}
 	/>
 }
 
@@ -54,7 +57,8 @@ export const FullAccordion =() => {
 						  setCollapsed(!collapsed)
 						  callbackHandler()
 					  }}
-					  items={["Sasha","Sergey","Inna", "Alla"]}
+					  items={[{title: "Sasha", value: 1},{title: "Sergey", value: 2},{title: "Inna", value: 3}, {title: "Alla", value: 4}]}
+					  onCLick={onClickHandler}
 	/>
 }
 
