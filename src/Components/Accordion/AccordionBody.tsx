@@ -1,12 +1,13 @@
 import React from 'react';
 
-const AccordionBody = () => {
+type AccordionBodyPropsType = {
+	items: string[]
+}
+const AccordionBody = (props: AccordionBodyPropsType) => {
 	return (
 		<div>
 			<ul>
-				<li>1</li>
-				<li>2</li>
-				<li>3</li>
+				{props.items.map((el=> <li>{el}</li>))}
 			</ul>
 		</div>
 	);

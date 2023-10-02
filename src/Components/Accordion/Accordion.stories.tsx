@@ -26,17 +26,24 @@ export default {
 
 // "old syntax"
 
+// Kabzda 14
+
 const callbackHandler  = action("FullAccordion was clicked")
 
 export const CollapsedAccordion =() => {
 	return <Accordion title={"Collapsed Accordion"}
 					  collapsed={true}
-					  callBack={()=>{}}/>
+					  callBack={()=>{}}
+					  items={[]}
+
+	/>
 }
 export const OpenedAccordion =() => {
 	return <Accordion title={"Opened Accordion"}
 					  collapsed={false}
-					  callBack={() => {}}/>
+					  callBack={() => {}}
+					  items={["Roma","Anna","Igor"]}
+	/>
 }
 
 export const FullAccordion =() => {
@@ -46,6 +53,10 @@ export const FullAccordion =() => {
 					  callBack={()=>{
 						  setCollapsed(!collapsed)
 						  callbackHandler()
-					  }
-					  }/>
+					  }}
+					  items={["Sasha","Sergey","Inna", "Alla"]}
+	/>
 }
+
+
+

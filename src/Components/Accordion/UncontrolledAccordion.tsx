@@ -17,7 +17,7 @@ export const UncontrolledAccordion = (props: PropsType) => {
 				<AccordionTitle title={props.title} callBack={clickAccordionTitleHandler}/>
 			</div>
 			{/*{props.collapsed ? <AccordionBody/> : <></>}*/} {/*not good*/}
-			{collapsed && <AccordionBody/>} {/*best practice*/}
+			{collapsed && <AccordionBody items={["Viktor","Igor"]}/>} {/*best practice*/}
 		</div>
 	)
 };
