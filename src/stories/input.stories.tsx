@@ -47,7 +47,18 @@ export const ControlledCheckbox  = () => {
     const onChangeCheckbox = (e: ChangeEvent<HTMLInputElement>)=> {
         setParentValue(e.currentTarget.checked)
     }
-    // return <input value={parentValue} onChange={action("Want to change")}/>
     return <input type="checkbox" checked={parentValue} onChange={onChangeCheckbox}/>
+}
+export const ControlledSelect  = () => {
+    const [parentValue, setParentValue] = useState<string | undefined>(undefined)
+    const onChangeSelect = (e: ChangeEvent<HTMLSelectElement>)=> {
+        setParentValue(e.currentTarget.value)
+    }
+    return <select value={parentValue} onChange={onChangeSelect}>
+        <option>none</option>
+        <option value={"1"}>Minsk</option>
+        <option value={"2"}>Moscow</option>
+        <option value={"3"}>Kiev</option>
+    </select>
 }
 export const ControlledInputWithFixedValue = () => <input value={"Hello, I am controlled input"}/>;
