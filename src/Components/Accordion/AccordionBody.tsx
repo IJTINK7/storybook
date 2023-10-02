@@ -12,7 +12,7 @@ const AccordionBody = (props: AccordionBodyPropsType) => {
 			<ul>
 				{props.items.map(((el,index)=> {
 					const onClickHandler = () => {
-						props.onCLick(el.value)
+						props.onCLick(el.title)
 					}
 					return<li onClick={onClickHandler} key={index}>{el.title}</li>
 				}))}
