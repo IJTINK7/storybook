@@ -4,6 +4,7 @@ import AccordionBody from "./AccordionBody";
 
 type PropsType = {
 	title: string
+	callback:()=>void
 	onCLick: (value: any)=> void
 }
 
@@ -11,6 +12,7 @@ export const UncontrolledAccordion = (props: PropsType) => {
 	const [collapsed, setCollapsed] = useState(true)
 	const clickAccordionTitleHandler = () => {
 		setCollapsed(!collapsed)
+		props.callback()
 	}
 	return (
 		<div>
