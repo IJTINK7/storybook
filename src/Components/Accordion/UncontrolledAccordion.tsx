@@ -13,10 +13,12 @@ type ActionType = {
 }
 
 const reducer = (state: boolean, action: ActionType): boolean => {
-	if(action.type === "TOGGLE-COLLAPSED"){
-		return !state
+	switch (action.type) {
+		case "TOGGLE-COLLAPSED":
+			return !state
+		default:
+			throw new Error("You chose Incorrect action type")
 	}
-	return state
 }
 
 export const UncontrolledAccordion = (props: PropsType) => {
