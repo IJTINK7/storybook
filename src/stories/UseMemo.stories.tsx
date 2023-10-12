@@ -70,7 +70,7 @@ export const HelpToReactMemo = () => {
 	)
 }
 export const LikeUseCallBack = () => {
-	console.log("HelpToReactMemo is rendering")
+	console.log("LikeUseCallBack")
 	const [counter, setCounter] = useState(0)
 	const [users, setUsers] = useState(["Roma", "Anna", "Bob"])
 
@@ -87,3 +87,9 @@ export const LikeUseCallBack = () => {
 		</div>
 	)
 }
+
+const BooksSecret = (props: { books: string[] }) => {
+	console.log("BooksSecret")
+	return <div>{props.books.map((el, index) => <div key={index}>{el}</div>)}</div>
+}
+const Book = React.memo(BooksSecret)
