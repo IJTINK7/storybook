@@ -6,14 +6,14 @@ export default {
 const NewMessagesCounter = (props: any) => {
 	return <div>{props.count}</div>
 }
-const BadUsers = (props: {users: string[]}) => {
+const BadUsers = (props: { users: string[] }) => {
 	console.log("Users was render")
-	return <div>{props.users.map((el, index)=> <div key={index}>{el}</div>)}</div>
+	return <div>{props.users.map((el, index) => <div key={index}>{el}</div>)}</div>
 }
 
 const Users = React.memo(BadUsers) // creating of container component
 
-export const Example = () =>{
+export const Example = () => {
 	const [counter, setCounter] = useState(0)
 	const [users, setUsers] = useState(["Roma", "Anna", "Bob"])
 	const AddUser = () => {
@@ -29,9 +29,9 @@ export const Example = () =>{
 
 		setUsers([...users, "Anton" + new Date().getTime()])
 	}
-	return(
+	return (
 		<div>
-			<button onClick={()=>setCounter(counter + 1)}>+</button>
+			<button onClick={() => setCounter(counter + 1)}>+</button>
 			<button onClick={AddUser}>Add user</button>
 			<NewMessagesCounter count={counter}/>
 			<Users users={users}/>

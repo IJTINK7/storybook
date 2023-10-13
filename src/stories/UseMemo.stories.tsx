@@ -56,9 +56,9 @@ export const HelpToReactMemo = () => {
 	const [counter, setCounter] = useState(0)
 	const [users, setUsers] = useState(["Roma", "Anna", "Bob"])
 
-	const newArray = useMemo(()=>{
+	const newArray = useMemo(() => {
 		return users.filter(el => el.toLowerCase().indexOf("a") > -1)
-	},[users])
+	}, [users])
 
 
 	return (
@@ -74,9 +74,9 @@ export const LikeUseCallBack = () => {
 	const [counter, setCounter] = useState(0)
 	const [books, setBooks] = useState(["React", "JS", "CSS"])
 
-	const newArray = useMemo(()=>{
+	const newArray = useMemo(() => {
 		return books.filter(el => el.toLowerCase().indexOf("a") > -1)
-	},[books])
+	}, [books])
 	const addBook = () => {
 		const newBooks = [...books, "Angular " + new Date().getTime()]
 		setBooks(newBooks)
