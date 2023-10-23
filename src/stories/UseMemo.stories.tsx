@@ -78,18 +78,16 @@ export const LikeUseCallBack = () => {
 		return books.filter(el => el.toLowerCase().indexOf("a") > -1)
 	}, [books])
 
-	const addBook = () => {
-		const newBooks = [...books, "Angular " + new Date().getTime()]
-		setBooks(newBooks)
-	}
 	const memorizedAddBook = useMemo(()=> {
-		return addBook
+		return ()=>{
+			const newBooks = [...books, "Angular " + new Date().getTime()]
+			setBooks(newBooks)
+		}
 	}, [books])
 
 	return (
 		<div>
 			<button onClick={() => setCounter(counter + 1)}>+</button>
-			<button onClick={() => addBook()}>Add book</button>
 			{counter}
 			<Book books={newArray} addBook={memorizedAddBook}/>
 		</div>
