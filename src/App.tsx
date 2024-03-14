@@ -39,7 +39,7 @@ function App() {
 
 			<hr/>
 			<hr/>
-			{/*<ControlledOnOff active={activeOnOffElement} callBack={() => setActiveOnOffElement(!activeOnOffElement)}/>*/}
+			<ControlledOnOff active={activeOnOffElement} callBack={() => setActiveOnOffElement(!activeOnOffElement)}/>
 			<UncontrolledOnOff callBack={setActiveOnOffElement}/>
 			{activeOnOffElement.toString()}
 			<CustomSelect title={"Select city title"} items={cities}/>
