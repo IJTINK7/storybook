@@ -20,10 +20,22 @@ export const SimpleExample = () => {
 	const onclickHandler = () => {
 		setCounter(counter+1)
 	}
+
+	const [date, setDate]= useState(new Date())
+	const digitsToString = (digit: number) => digit < 10 ? "0" + digit : digit
+
+	const secondsAsString = digitsToString(date.getSeconds())
+	const minutesAsString = digitsToString(date.getMinutes())
+	const hoursAsString = digitsToString(date.getHours())
+	useEffect(()=>{
+		setInterval(()=>setDate(new Date()),1000)
+	}, [secondsAsString])
 	return (
 		<div>
 			<button onClick={onclickHandler}>+</button>
 			<div>{counter}</div>
+			<div>Clock:</div>
+			<div>{hoursAsString}:{minutesAsString}:{secondsAsString}</div>
 		</div>
 	);
 };

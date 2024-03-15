@@ -6,6 +6,7 @@ import {UncontrolledAccordion} from "./Components/Accordion/UncontrolledAccordio
 import {UncontrolledOnOff} from "./Components/OnOff/UncontrolledOnOff";
 import {CustomSelect} from "./Components/Select/CustomSelect";
 import {ControlledOnOff} from "./Components/OnOff/ControlledOnOff";
+import {SimpleExample} from "./stories/UseEffect.stories";
 
 export type cityType = {
 	title: string
@@ -43,6 +44,7 @@ function App() {
 			<UncontrolledOnOff callBack={setActiveOnOffElement}/>
 			{activeOnOffElement.toString()}
 			<CustomSelect title={"Select city title"} items={cities}/>
+			<SimpleExample/>
 		</div>
 	);
 }
