@@ -28,7 +28,10 @@ export const SimpleExample = () => {
 	const minutesAsString = digitsToString(date.getMinutes())
 	const hoursAsString = digitsToString(date.getHours())
 	useEffect(()=>{
-		setInterval(()=>setDate(new Date()),1000)
+		const intervalID = setInterval(()=>setDate(new Date()),1000)
+		return()=>{
+			clearInterval(intervalID)
+		}
 	}, [secondsAsString])
 	return (
 		<div>
